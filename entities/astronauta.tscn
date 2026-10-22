@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cmoe5m264n051"]
+
+[ext_resource type="Texture2D" uid="uid://cj8x00ukniruq" path="res://icon.svg" id="1_2eju7"]
+[ext_resource type="Script" uid="uid://by8fuufe171jh" path="res://scripts/astronauta.gd" id="1_kslan"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 12.0
+
+[node name="Astronauta" type="CharacterBody2D" unique_id=1019041079]
+position = Vector2(200, 222)
+script = ExtResource("1_kslan")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1938320668]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=106750015]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_2eju7")
