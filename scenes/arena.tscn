@@ -1,7 +1,41 @@
 [gd_scene format=3 uid="uid://dmbrq84o3etyr"]
 
 [ext_resource type="PackedScene" uid="uid://cmoe5m264n051" path="res://entities/astronauta.tscn" id="1_e05a3"]
+[ext_resource type="Texture2D" uid="uid://xvq0y5sqd62d" path="res://sprites/cenas/quadante123.png" id="2_wl4x5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(20, 600)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wl4x5"]
+size = Vector2(800, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_olpmc"]
+size = Vector2(800, 20)
 
 [node name="Espaço" type="Node2D" unique_id=2146083269]
 
 [node name="Astronauta" parent="." unique_id=1019041079 instance=ExtResource("1_e05a3")]
+position = Vector2(156, 401)
+
+[node name="Cenario" type="Sprite2D" parent="." unique_id=1045796681]
+z_index = -10
+position = Vector2(400, 300)
+texture = ExtResource("2_wl4x5")
+
+[node name="Limites" type="StaticBody2D" parent="." unique_id=79556505]
+
+[node name="ParedeEsquerda" type="CollisionShape2D" parent="Limites" unique_id=2039005693]
+position = Vector2(0, 300)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="ParedeDireita" type="CollisionShape2D" parent="Limites" unique_id=2086674216]
+position = Vector2(800, 300)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="ParedeCima" type="CollisionShape2D" parent="Limites" unique_id=1372804846]
+position = Vector2(400, 0)
+shape = SubResource("RectangleShape2D_wl4x5")
+
+[node name="ParedeBaixo" type="CollisionShape2D" parent="Limites" unique_id=1792324530]
+position = Vector2(400, 600)
+shape = SubResource("RectangleShape2D_olpmc")

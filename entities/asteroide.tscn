@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://br6wcj3glrfsu"]
+
+[ext_resource type="Texture2D" uid="uid://dw5bvcgex8ufy" path="res://sprites/asteroides/pedrao.png" id="1_67u35"]
+[ext_resource type="Script" uid="uid://du8mdgremagup" path="res://scripts/asteroide.gd" id="1_upnfu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
+radius = 18.0
+
+[node name="Asteroide" type="CharacterBody2D" unique_id=1910399287]
+script = ExtResource("1_upnfu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1233405117]
+shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1275348898]
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("1_67u35")
