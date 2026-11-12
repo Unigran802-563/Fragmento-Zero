@@ -1,7 +1,11 @@
 [gd_scene format=3 uid="uid://dmbrq84o3etyr"]
 
 [ext_resource type="PackedScene" uid="uid://cmoe5m264n051" path="res://entities/astronauta.tscn" id="1_e05a3"]
+[ext_resource type="Script" uid="uid://d1g0cmxduivgp" path="res://scripts/arena.gd" id="1_xdvfk"]
 [ext_resource type="Texture2D" uid="uid://xvq0y5sqd62d" path="res://sprites/cenas/quadante123.png" id="2_wl4x5"]
+[ext_resource type="PackedScene" uid="uid://br6wcj3glrfsu" path="res://entities/asteroide.tscn" id="3_olpmc"]
+[ext_resource type="Texture2D" uid="uid://dtin68urpvh21" path="res://sprites/astronauta/rosto/3vidas.png" id="5_7ft05"]
+[ext_resource type="Texture2D" uid="uid://1op55evasci6" path="res://sprites/vidas/3vidas.png" id="6_4ag8t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(20, 600)
@@ -13,6 +17,7 @@ size = Vector2(800, 20)
 size = Vector2(800, 20)
 
 [node name="Espaço" type="Node2D" unique_id=2146083269]
+script = ExtResource("1_xdvfk")
 
 [node name="Astronauta" parent="." unique_id=1019041079 instance=ExtResource("1_e05a3")]
 position = Vector2(156, 401)
@@ -39,3 +44,38 @@ shape = SubResource("RectangleShape2D_wl4x5")
 [node name="ParedeBaixo" type="CollisionShape2D" parent="Limites" unique_id=1792324530]
 position = Vector2(400, 600)
 shape = SubResource("RectangleShape2D_olpmc")
+
+[node name="Asteroide" parent="." unique_id=1910399287 instance=ExtResource("3_olpmc")]
+position = Vector2(769, 88)
+
+[node name="Tempo" type="Timer" parent="." unique_id=725232467]
+wait_time = 60.0
+one_shot = true
+autostart = true
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1772178411]
+
+[node name="TextoTempo" type="Label" parent="HUD" unique_id=507098192]
+offset_left = 700.0
+offset_top = 20.0
+offset_right = 781.0
+offset_bottom = 43.0
+text = "Tempo: 60"
+
+[node name="RetratoVida" type="TextureRect" parent="HUD" unique_id=1968527044]
+offset_left = 700.0
+offset_top = 50.0
+offset_right = 1099.0
+offset_bottom = 449.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_7ft05")
+
+[node name="IconeVida" type="TextureRect" parent="HUD" unique_id=1801322006]
+offset_left = 707.00006
+offset_top = 140.00002
+offset_right = 1355.0
+offset_bottom = 335.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("6_4ag8t")
+
+[connection signal="timeout" from="Tempo" to="." method="_on_tempo_timeout"]

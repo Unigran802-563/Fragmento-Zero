@@ -6,8 +6,12 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_g4v7s"]
 radius = 12.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_yf5fn"]
+radius = 12.0
+
 [node name="Astronauta" type="CharacterBody2D" unique_id=1019041079]
 position = Vector2(-46, -32)
+collision_layer = 2
 script = ExtResource("1_kslan")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1938320668]
@@ -16,3 +20,10 @@ shape = SubResource("CircleShape2D_g4v7s")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=106750015]
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("2_kslan")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1068187786]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1340172667]
+shape = SubResource("CircleShape2D_yf5fn")

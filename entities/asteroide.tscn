@@ -7,6 +7,8 @@
 radius = 18.0
 
 [node name="Asteroide" type="CharacterBody2D" unique_id=1910399287]
+collision_layer = 4
+collision_mask = 5
 script = ExtResource("1_upnfu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1233405117]

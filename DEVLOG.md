@@ -10,3 +10,9 @@ Como resolvi: inicializei o Git e configurei o repositório remoto pelo terminal
 O que fiz: adicionei os sprites direcionais do astronauta, criei o asteroide Pedrão com movimento básico e centralizei o cenário com limites invisíveis.
 O que travou: ao duplicar as paredes, mudar o tamanho de uma alterava as outras.
 Como resolvi: tornei os recursos de colisão únicos antes de ajustar o tamanho.
+
+## Aula 11 -- 11/11
+
+O que fiz: implementei o cronômetro de 60 segundos, a vida do astronauta, o dano por contato e a atualização do retrato e do coração.
+O que travou: o astronauta parecia não responder ao WASD durante o teste.
+Como resolvi: a janela do jogo estava sem foco; cliquei nela e o controle voltou a funcionar.

@@ -10,7 +10,30 @@ const TEXTURA_COSTA: Texture2D = preload("res://sprites/astronauta/costa.png")
 const TEXTURA_DIREITA: Texture2D = preload("res://sprites/astronauta/direita.png")
 const TEXTURA_ESQUERDA: Texture2D = preload("res://sprites/astronauta/esquerda.png")
 
+@export var vida: int = 3
+var invulneravel := false
+
+@onready var hurtbox: Area2D = $Hurtbox
+
 @onready var sprite: Sprite2D = $Sprite2D
+func _process(_delta: float) -> void:
+	if vida > 0 and not invulneravel and hurtbox.has_overlapping_bodies():
+		levar_dano()
+
+
+func levar_dano() -> void:
+	vida -= 1
+	print("Vida restante: ", vida)
+
+	if vida <= 0:
+		print("Astronauta sem vidas — derrota a implementar depois.")
+		return
+
+	invulneravel = true
+	modulate.a = 0.4
+	await get_tree().create_timer(1.0).timeout
+	modulate.a = 1.0
+	invulneravel = false
 
 
 func _physics_process(_delta: float) -> void:
