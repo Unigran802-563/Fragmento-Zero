@@ -26,7 +26,8 @@ func levar_dano() -> void:
 	print("Vida restante: ", vida)
 
 	if vida <= 0:
-		print("Astronauta sem vidas — derrota a implementar depois.")
+		# Origem: integração sugerida por IA (Manus), adaptada ao projeto.
+		get_tree().change_scene_to_file("res://scenes/derrota.tscn")
 		return
 
 	invulneravel = true
@@ -34,6 +35,7 @@ func levar_dano() -> void:
 	await get_tree().create_timer(1.0).timeout
 	modulate.a = 1.0
 	invulneravel = false
+
 
 
 func _physics_process(_delta: float) -> void:

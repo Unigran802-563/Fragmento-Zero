@@ -18,6 +18,7 @@ size = Vector2(800, 20)
 
 [node name="Espaço" type="Node2D" unique_id=2146083269]
 script = ExtResource("1_xdvfk")
+cena_asteroide = ExtResource("3_olpmc")
 
 [node name="Astronauta" parent="." unique_id=1019041079 instance=ExtResource("1_e05a3")]
 position = Vector2(156, 401)
@@ -44,9 +45,6 @@ shape = SubResource("RectangleShape2D_wl4x5")
 [node name="ParedeBaixo" type="CollisionShape2D" parent="Limites" unique_id=1792324530]
 position = Vector2(400, 600)
 shape = SubResource("RectangleShape2D_olpmc")
-
-[node name="Asteroide" parent="." unique_id=1910399287 instance=ExtResource("3_olpmc")]
-position = Vector2(769, 88)
 
 [node name="Tempo" type="Timer" parent="." unique_id=725232467]
 wait_time = 60.0
@@ -78,4 +76,23 @@ offset_bottom = 335.0
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("6_4ag8t")
 
+[node name="Nascedouros" type="Node2D" parent="." unique_id=511073436]
+
+[node name="Esquerda" type="Marker2D" parent="Nascedouros" unique_id=1303738161]
+position = Vector2(30, 300)
+
+[node name="Direita" type="Marker2D" parent="Nascedouros" unique_id=61107536]
+position = Vector2(770, 300)
+
+[node name="Cima" type="Marker2D" parent="Nascedouros" unique_id=1691489746]
+position = Vector2(400, 30)
+
+[node name="Baixo" type="Marker2D" parent="Nascedouros" unique_id=1042750924]
+position = Vector2(400, 570)
+
+[node name="Horda" type="Timer" parent="." unique_id=1854474922]
+wait_time = 2.0
+autostart = true
+
 [connection signal="timeout" from="Tempo" to="." method="_on_tempo_timeout"]
+[connection signal="timeout" from="Horda" to="." method="_on_horda_timeout"]

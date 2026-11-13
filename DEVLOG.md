@@ -16,3 +16,16 @@ Como resolvi: tornei os recursos de colisão únicos antes de ajustar o tamanho.
 O que fiz: implementei o cronômetro de 60 segundos, a vida do astronauta, o dano por contato e a atualização do retrato e do coração.
 O que travou: o astronauta parecia não responder ao WASD durante o teste.
 Como resolvi: a janela do jogo estava sem foco; cliquei nela e o controle voltou a funcionar.
+
+
+## Continuação -- 12/11
+
+O que fiz: implementei a horda com rajadas, velocidade crescente, fragmentação, vida/dano e tela de derrota com reinício.
+O que travou: o script da horda e o botão de reinício deram erro por funções duplicadas e indentação.
+Como resolvi: removi as duplicatas e ajustei a indentação; testei o surgimento dos asteroides e o reinício.
+
+## Continuação -- 13/11
+
+O que fiz: comecei a transformar a derrota em uma sobreposição vermelha.
+O que travou: não encontrei o preset Full Rect para o ColorRect.
+Como resolvi: ainda não resolvi; vou retomar essa configuração depois.
