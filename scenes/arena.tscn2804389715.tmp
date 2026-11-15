@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dmbrq84o3etyr"]
+
+[ext_resource type="PackedScene" uid="uid://cmoe5m264n051" path="res://entities/astronauta.tscn" id="1_e05a3"]
+
+[node name="Espaço" type="Node2D" unique_id=2146083269]
+
+[node name="Astronauta" parent="." unique_id=1019041079 instance=ExtResource("1_e05a3")]

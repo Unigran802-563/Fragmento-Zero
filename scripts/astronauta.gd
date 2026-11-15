@@ -23,11 +23,15 @@ func _process(_delta: float) -> void:
 
 func levar_dano() -> void:
 	vida -= 1
+		# Origem: integração sugerida por IA (Manus), adaptada ao projeto.
+	get_tree().current_scene.tremer_camera()
+
 	print("Vida restante: ", vida)
 
 	if vida <= 0:
-		# Origem: integração sugerida por IA (Manus), adaptada ao projeto.
-		get_tree().change_scene_to_file("res://scenes/derrota.tscn")
+		# Origem: lógica sugerida por IA (Manus), adaptada ao projeto.
+		await get_tree().create_timer(1.2).timeout
+		get_tree().current_scene.mostrar_derrota()
 		return
 
 	invulneravel = true

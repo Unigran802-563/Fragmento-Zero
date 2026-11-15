@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://ca3sjvsbusxc3"]
+
+[ext_resource type="Texture2D" uid="uid://bl4qi8w7w4gyb" path="res://sprites/cenas/vitoria.jpeg" id="1_5w2qk"]
+
+[node name="Vitoria" type="Control" unique_id=1438417285]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=35288180]
+layout_mode = 0
+offset_right = 8062.4995
+offset_bottom = 6019.9995
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_5w2qk")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2010427769]
+custom_minimum_size = Vector2(800, 600)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 0.5647059)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=2144385563]
+custom_minimum_size = Vector2(400, 300)
+layout_mode = 0
+offset_left = 196.0
+offset_top = 133.0
+offset_right = 596.0
+offset_bottom = 433.0
+color = Color(0, 0, 0, 0.5647059)
+
+[node name="Label" type="Label" parent="." unique_id=20348711]
+layout_mode = 0
+offset_left = 350.0
+offset_top = 215.0
+offset_right = 460.0
+offset_bottom = 238.0
+text = "Você escapou!"
+
+[node name="Button" type="Button" parent="." unique_id=397797551]
+layout_mode = 0
+offset_left = 331.0
+offset_top = 282.0
+offset_right = 471.0
+offset_bottom = 313.0
+text = "Jogar novamente"

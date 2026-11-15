@@ -29,3 +29,9 @@ Como resolvi: removi as duplicatas e ajustei a indentação; testei o surgimento
 O que fiz: comecei a transformar a derrota em uma sobreposição vermelha.
 O que travou: não encontrei o preset Full Rect para o ColorRect.
 Como resolvi: ainda não resolvi; vou retomar essa configuração depois.
+
+## Continuação -- 14/11
+
+O que fiz: preparei a sobreposição de derrota e criei a saída e a tela de vitória.
+O que travou: ainda não testei a vitória jogando até alcançar a saída.
+Como resolvi: a lógica foi conectada ao Timer de 60 segundos e ao sinal da saída; o teste ficou pendente.

@@ -11,8 +11,11 @@ const CORACAO_2: Texture2D = preload("res://sprites/vidas/2vidas.png")
 const CORACAO_1: Texture2D = preload("res://sprites/vidas/1vida.png")
 const CORACAO_VAZIO: Texture2D = preload("res://sprites/vidas/morte.png")
 
+@onready var saida: Area2D = $Saida
+@onready var tela_vitoria: Control = $HUD/TelaVitoria
 @export var cena_asteroide: PackedScene
-
+@onready var tela_derrota: Control = $HUD/TelaDerrota
+@onready var camera: Camera2D = $CameraJogador
 @onready var tempo: Timer = $Tempo
 @onready var horda: Timer = $Horda
 @onready var astronauta = $Astronauta
@@ -40,7 +43,9 @@ func _process(_delta: float) -> void:
 
 
 func _on_tempo_timeout() -> void:
-	print("60 segundos: a saída pode abrir.")
+	saida.visible = true
+	saida.monitoring = true
+
 
 
 func _on_horda_timeout() -> void:
@@ -76,3 +81,27 @@ func _on_horda_timeout() -> void:
 		asteroide.direcao = asteroide.global_position.direction_to(
 			astronauta.global_position
 		)
+		
+		# Origem: lógica sugerida por IA (Manus), adaptada ao projeto.
+func mostrar_derrota() -> void:
+	tela_derrota.visible = true
+	get_tree().paused = true
+	
+	
+# Origem: lógica sugerida por IA (Manus), adaptada ao projeto.
+func tremer_camera() -> void:
+	var tween := create_tween()
+	for _i in range(6):
+		camera.offset = Vector2(
+			randf_range(-6.0, 6.0),
+			randf_range(-4.0, 4.0)
+		)
+		await get_tree().create_timer(0.03).timeout
+	camera.offset = Vector2.ZERO
+
+
+# Origem: lógica sugerida por IA (Manus), adaptada ao projeto.
+func _on_saida_body_entered(body: Node2D) -> void:
+	if body == astronauta:
+		tela_vitoria.visible = true
+		get_tree().paused = true
