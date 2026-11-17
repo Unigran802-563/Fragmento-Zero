@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://1op55evasci6" path="res://sprites/vidas/3vidas.png" id="6_4ag8t"]
 [ext_resource type="PackedScene" uid="uid://owwap42qwxy0" path="res://scenes/derrota.tscn" id="7_dpxgc"]
 [ext_resource type="PackedScene" uid="uid://ca3sjvsbusxc3" path="res://scenes/vitoria.tscn" id="8_oexds"]
+[ext_resource type="Texture2D" uid="uid://c0gnra23cjhp0" path="res://sprites/cenas/Jetpack.png" id="9_naajo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(20, 600)
@@ -52,7 +53,7 @@ position = Vector2(400, 600)
 shape = SubResource("RectangleShape2D_olpmc")
 
 [node name="Tempo" type="Timer" parent="." unique_id=725232467]
-wait_time = 5.0
+wait_time = 60.0
 one_shot = true
 autostart = true
 
@@ -90,16 +91,28 @@ visible = false
 [node name="Nascedouros" type="Node2D" parent="." unique_id=511073436]
 
 [node name="Esquerda" type="Marker2D" parent="Nascedouros" unique_id=1303738161]
-position = Vector2(-45, 300)
+position = Vector2(-45, 401)
+
+[node name="Esquerda2" type="Marker2D" parent="Nascedouros" unique_id=828037312]
+position = Vector2(-45, 204)
 
 [node name="Direita" type="Marker2D" parent="Nascedouros" unique_id=61107536]
-position = Vector2(849, 300)
+position = Vector2(849, 236)
+
+[node name="Direita2" type="Marker2D" parent="Nascedouros" unique_id=3752636]
+position = Vector2(849, 369)
 
 [node name="Cima" type="Marker2D" parent="Nascedouros" unique_id=1691489746]
-position = Vector2(400, -45)
+position = Vector2(327, -45)
+
+[node name="Cima2" type="Marker2D" parent="Nascedouros" unique_id=1936709898]
+position = Vector2(476, -45)
 
 [node name="Baixo" type="Marker2D" parent="Nascedouros" unique_id=1042750924]
-position = Vector2(400, 639)
+position = Vector2(299, 639)
+
+[node name="Baixo2" type="Marker2D" parent="Nascedouros" unique_id=2082973809]
+position = Vector2(489, 639)
 
 [node name="Horda" type="Timer" parent="." unique_id=1854474922]
 wait_time = 2.0
@@ -110,12 +123,19 @@ position = Vector2(400, 300)
 
 [node name="Saida" type="Area2D" parent="." unique_id=540211769]
 visible = false
-light_mask = 0
+light_mask = 2
 visibility_layer = 2
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Saida" unique_id=427635744]
 position = Vector2(758, 551)
 shape = SubResource("CircleShape2D_g4v7s")
+
+[node name="Jetpack" type="Sprite2D" parent="Saida" unique_id=867638496]
+position = Vector2(758, 553)
+scale = Vector2(0.09459461, 0.0945946)
+texture = ExtResource("9_naajo")
 
 [connection signal="timeout" from="Tempo" to="." method="_on_tempo_timeout"]
 [connection signal="timeout" from="Horda" to="." method="_on_horda_timeout"]

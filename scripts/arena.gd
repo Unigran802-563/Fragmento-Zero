@@ -105,3 +105,8 @@ func _on_saida_body_entered(body: Node2D) -> void:
 	if body == astronauta:
 		tela_vitoria.visible = true
 		get_tree().paused = true
+		
+		
+func _ready() -> void:
+	saida.visible = false
+	saida.monitoring = false

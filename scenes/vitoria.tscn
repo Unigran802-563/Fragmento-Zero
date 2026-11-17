@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://ca3sjvsbusxc3"]
 
+[ext_resource type="Script" uid="uid://doplrpdmkavj7" path="res://scripts/vitoria.gd" id="1_3oowa"]
 [ext_resource type="Texture2D" uid="uid://bl4qi8w7w4gyb" path="res://sprites/cenas/vitoria.jpeg" id="1_5w2qk"]
 
 [node name="Vitoria" type="Control" unique_id=1438417285]
@@ -10,12 +11,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_3oowa")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=35288180]
 layout_mode = 0
 offset_right = 8062.4995
 offset_bottom = 6019.9995
 scale = Vector2(0.1, 0.1)
+mouse_filter = 0
 texture = ExtResource("1_5w2qk")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2010427769]
@@ -49,3 +52,5 @@ offset_top = 282.0
 offset_right = 471.0
 offset_bottom = 313.0
 text = "Jogar novamente"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
